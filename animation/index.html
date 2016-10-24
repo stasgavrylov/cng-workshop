@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+
+Copyright (c) 2016 by stasgavrylov (http://jsbin.com/nozozu/5/edit)
+
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Animation</title>
+<style>
+canvas {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+  <h1>Animation</h1>
+  <canvas id="canvas" width="500" height="500"></canvas>
+<script>
+const canvas = document.querySelector('#canvas')
+const ctx = canvas.getContext('2d')
+var x = 0
+var step = 2
+
+/*
+  What is rAF?
+  const RAF_ID = window.requestAnimationFrame(cb)
+  cb gets a DOMHighResTimeStamp
+  What is timestamp good for?
+
+  To cancel raf use:
+  window.cancelAnimationFrame(RAF_ID)
+*/
+
+/*
+  Things to keep in mind:
+  1) Always use rAF instead of setInterval
+  2) Don't forget to clear each frame
+*/
+
+// function draw() {
+//   ctx.clearRect(0, 0, canvas.width, canvas.height)
+//   requestAnimationFrame(draw)
+//   if (x > canvas.width || x < -100)
+//     step = -step
+
+//   ctx.fillRect(x, 200, 100, 100)
+//   x+=step
+// }
+// draw()
+
+</script>
+</body>
+</html>

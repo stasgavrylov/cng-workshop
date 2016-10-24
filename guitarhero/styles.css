@@ -1,0 +1,41 @@
+body {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid black;
+  transform: rotateX(180deg);
+}
+
+.score-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 100%;
+  margin-left: auto;
+  text-align: center;
+  font-family: monospace;
+}
+
+.score {
+  font-size: 48px;
+}
+
+.score-field {
+  display: none;
+}
+
+.score-board.initialized .banner {
+  display: none;
+}
+.score-board.initialized .score-field {
+  display: initial;
+}

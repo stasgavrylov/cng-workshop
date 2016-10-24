@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Drawing text</title>
+<style>
+canvas {
+  display: block;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+  <h1>Drawing text</h1>
+  <canvas id="canvas" width="500" height="500"></canvas>
+<script>
+const canvas = document.querySelector('#canvas')
+const ctx = canvas.getContext('2d')
+
+/*
+  1.Drawing text:
+  a) ctx.fillText(text, x, y [, maxWidth])
+  b) ctx.strokeText(text, x, y [, maxWidth])
+  default font - '10px sans-serif'
+*/
+// ctx.fillText('I\'m filled', 100, 100)
+// ctx.strokeText('I\'m stroked', 100, 100)
+
+/*
+  0. Set font:
+  ctx.font = <CSS font shorthand>
+*/
+// ctx.font = "bold 48px Helvetica"
+// ctx.fillText('I\'m filled', 100, 100)
+// ctx.strokeText('I\'m stroked', 100, 100)
+// ctx.fillText('I\'m wide but constrained', 100, 100)
+
+/*
+  2. Align it:
+  ctx.textAlign = <start, end, left, right, center>
+  default - start
+*/
+// ctx.textAlign = 'center'
+// ctx.fillText('I am centered', 250, 100)
+
+/*
+  3. Measure it:
+  ctx.measureText(<String>)
+  returns TextMetrics object
+*/
+// ctx.fillText('RailsReactor', 150, 100)
+// const text = ctx.measureText('RailsReactor')
+// ctx.fillText(text.width, 150, 200)
+
+/*
+  4. Apply shadow with:
+  - shadowOffsetX = <float>
+  - shadowOffsetY = <float>
+  - shadowBlur = <float>
+  - shadowColor = <color>
+*/
+// ctx.shadowOffsetX = 20
+// ctx.shadowOffsetY = 20
+// ctx.shadowColor = 'red'
+// ctx.shadowBlur = 5
+// ctx.fillText('RailsReactor', 150, 100)
+
+</script>
+</body>
+</html>

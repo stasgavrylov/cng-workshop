@@ -1,0 +1,20 @@
+{
+  "name": "cng-workshop",
+  "version": "1.0.0",
+  "description": "Canvas and Gamepad API workshop for RailsReactor",
+  "main": "server.js",
+  "dependencies": {
+    "live-server": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "canvas",
+    "gamepad"
+  ],
+  "author": "Stas Gavrylov",
+  "license": "ISC"
+}

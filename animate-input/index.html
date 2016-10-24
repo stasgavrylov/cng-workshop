@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+
+Copyright (c) 2016 by stasgavrylov (http://jsbin.com/qedowi/3/edit)
+
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Animating user input</title>
+<style>
+canvas {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+  <h1>Animating user input</h1>
+  <canvas id="canvas" width="500" height="500"></canvas>
+<script>
+const canvas = document.querySelector('#canvas')
+const ctx = canvas.getContext('2d')
+var x = 0, y = 0
+var stepX = 0, stepY = 0
+var step = 5
+
+function draw() {
+  requestAnimationFrame(draw)
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  ctx.fillRect(x, y, 100, 100)
+  x += stepX
+  y += stepY
+}
+draw()
+
+document.body.addEventListener('keydown', (e) => {
+  if (e.key == 'ArrowRight')
+    stepX = step
+  if (e.key == 'ArrowLeft')
+    stepX = -step
+  if (e.key == 'ArrowDown')
+    stepY = step
+  if (e.key == 'ArrowUp')
+    stepY = -step
+})
+document.body.addEventListener('keyup', (e) => {
+  if (e.key == 'ArrowRight' || e.key == 'ArrowLeft')
+    stepX = 0
+  if (e.key == 'ArrowUp' || e.key == 'ArrowDown')
+    stepY = 0
+})
+
+
+
+
+
+</script>
+</body>
+</html>

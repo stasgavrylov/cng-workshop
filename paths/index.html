@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+
+Copyright (c) 2016 by stasgavrylov (http://jsbin.com/domugot/4/edit)
+
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Advanced Shapes - Paths</title>
+<style>
+canvas {
+  display: block;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+  <h1>Advanced Shapes - Paths</h1>
+  <canvas id="canvas" width="500" height="500"></canvas>
+<script>
+const canvas = document.querySelector('#canvas')
+const ctx = canvas.getContext('2d')
+
+/*
+  Drawing a path:
+  1) init path
+  beginPath()
+*/
+// ctx.beginPath()
+
+/*
+  2) use any of path methods:
+  - moveTo(x, y)
+  - lineTo(x, y)
+  - arc(x, y, r, startAngle, endAngle, counterClockwise) in rad
+  - rect(x, y, width, height)
+  - ... and more
+*/
+// Rectangle:
+// ctx.rect(50, 50, 100, 100)
+
+// Circle:
+// ctx.arc(250, 250, 50, 0, Math.PI, true)
+
+// Half-circle:
+// ctx.arc(250, 350, 50, 0, Math.PI)
+
+// Triangle:
+// ctx.moveTo(200, 200)
+// ctx.lineTo(225, 250)
+// ctx.lineTo(175, 250)
+
+
+
+/*
+  2.5) close your path, if you have to
+  closePath()
+*/
+// ctx.closePath()
+
+/*
+  3) stroke or fill your path
+*/
+// ctx.stroke()
+// ctx.fill()
+</script>
+</body>
+</html>

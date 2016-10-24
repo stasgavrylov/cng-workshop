@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+
+Copyright (c) 2016 by stasgavrylov (http://jsbin.com/lahidam/5/edit)
+
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Styling your Canvas</title>
+<style>
+canvas {
+  display: block;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+  <h1>Styling your canvas</h1>
+  <canvas id="canvas" width="500" height="500"></canvas>
+<script>
+const canvas = document.querySelector('#canvas')
+const ctx = canvas.getContext('2d')
+
+/*
+  1. Setting fill color:
+  ctx.fillStyle = <color> (any valid CSS value)
+*/
+// ctx.fillStyle = "red"
+// ctx.fillStyle = "#0f0"
+// ctx.fillStyle = 'rgba(0,0,255,0.1)'
+// ctx.fillRect(0,0,50,50)
+
+// fillStyle example:
+// !function draw() {
+//   var ctx = document.getElementById('canvas').getContext('2d');
+//   for (var i = 0; i < 6; i++) {
+//     for (var j = 0; j < 6; j++) {
+//       ctx.fillStyle = 'rgb(' + Math.floor(255 - 42.5 * i) + ',' +
+//                        Math.floor(255 - 42.5 * j) + ',0)';
+//       ctx.fillRect(j * 50, i * 50, 50, 50);
+//     }
+//   }
+// }()
+
+
+/*
+  2. Setting stroke color:
+  ctx.strokeStyle = <color> (any valid CSS value)
+*/
+// ctx.strokeStyle = "red"
+// ctx.strokeStyle = "#0f0"
+// ctx.strokeRect(0,0,50,50)
+
+// strokeStyle example:
+// !function draw() {
+//     var ctx = document.getElementById('canvas').getContext('2d');
+//     for (var i = 0; i < 6; i++) {
+//       for (var j = 0; j < 6; j++) {
+//         ctx.strokeStyle = 'rgb(0,' + Math.floor(255 - 42.5 * i) + ',' +
+//                          Math.floor(255 - 42.5 * j) + ')';
+//         ctx.beginPath();
+//         ctx.arc(25 + j * 50, 25 + i * 50, 20, 0, Math.PI * 2, true);
+//         ctx.stroke();
+//       }
+//     }
+//   }()
+
+/*
+  3. Adjusting line/stroke width:
+  ctx.lineWidth = <float> (positive)
+*/
+// ctx.lineWidth = 10
+// ctx.strokeRect(50, 50, 50, 50)
+// ctx.beginPath()
+// ctx.moveTo(100, 100)
+// ctx.lineTo(200, 200)
+// ctx.lineTo(300, 100)
+// ctx.stroke()
+
+/*
+  4. Drawing gradients
+  a) choose gradient:
+  - createLinearGradient(x0, y0, x1, y1)
+  - createRadialGradient(x0, y0, r0, x1, y1, r1)
+  b) add color breaks
+  - gradient.addColorStop(position, color)
+  c) apply to context's fill or stroke style
+  d) draw a shape
+*/
+// const gr = ctx.createLinearGradient(100,100,400,400)
+// gr.addColorStop(0, 'white')
+// gr.addColorStop(0.5, 'red')
+// gr.addColorStop(1, 'black')
+// ctx.fillStyle = gr
+// ctx.fillRect(100, 100, 300, 300)
+
+// const rgr = ctx.createRadialGradient(250,250,10,250,350,100)
+// rgr.addColorStop(0, 'red')
+// rgr.addColorStop(1, 'green')
+// ctx.fillStyle = rgr
+// ctx.fillRect(150,150,300,300)
+</script>
+</body>
+</html>

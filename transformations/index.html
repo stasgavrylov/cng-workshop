@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+
+Copyright (c) 2016 by stasgavrylov (http://jsbin.com/favifaj/4/edit)
+
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Applying transformations</title>
+<style>
+canvas {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+  <h1>Applying transformations</h1>
+  <canvas id="canvas" width="500" height="500"></canvas>
+<script>
+const canvas = document.querySelector('#canvas')
+const ctx = canvas.getContext('2d')
+
+/*
+  1. Saving and restoring context
+  - ctx.save()
+  - ctx.restore()
+*/
+// ctx.fillStyle = 'red'
+// ctx.fillRect(0, 0, 100, 100)
+
+// ctx.save()
+// ctx.fillStyle = 'green'
+// ctx.fillRect(200, 200, 100, 100)
+// ctx.restore()
+
+// ctx.fillRect(400, 400, 100, 100)
+
+/*
+  2. Transforming canvas:
+  - translate(x, y)
+  - rotate(angle)
+  - scale(x, y)
+  - transform(matrix) // next time, folks
+*/
+// ctx.translate(100, 0)
+// ctx.rotate(Math.PI/4)
+// ctx.translate(100, 0)
+// ctx.fillRect(0, 0, 100, 100)
+// ctx.fillRect(200, 200, 100, 100)
+
+// ctx.save()
+// ctx.fillStyle = 'red'
+// ctx.rotate(Math.PI/4)
+// ctx.scale(2, 1)
+// ctx.fillRect(0, 0, 100, 100)
+// ctx.restore()
+// ctx.fillRect(200, 200, 100, 100)
+
+// Flip example:
+// ctx.translate(0, canvas.height)
+// ctx.scale(1, -1)
+// ctx.fillRect(100, 100, 100, 100)
+
+
+
+
+
+</script>
+</body>
+</html>

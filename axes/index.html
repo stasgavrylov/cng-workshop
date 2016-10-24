@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Axes</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Left stick tracking demo</h1>
+  <canvas id="c" width=400 height=400></canvas>
+  <script>
+    const canvas = document.getElementById('c')
+    const ctx = canvas.getContext('2d')
+    const halfsize = 200
+    ctx.translate(halfsize, halfsize)
+    ctx.beginPath()
+    ctx.arc(0, 0, 5, 0, Math.PI * 2)
+    ctx.fill()
+
+    function draw() {
+      requestAnimationFrame(draw)
+      ctx.save()
+      ctx.translate(-halfsize, -halfsize)
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.restore()
+
+      const gp = navigator.getGamepads()[0]
+      if (gp) {
+        const { axes } = gp
+        ctx.beginPath()
+        ctx.arc(axes[0] * halfsize, axes[1] * halfsize, 5, 0, Math.PI * 2)
+        ctx.fill()
+      }
+    }
+    draw()
+
+  </script>
+</body>
+</html>
